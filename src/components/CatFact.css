@@ -1,0 +1,16 @@
+.cat-fact {
+  background-color: #f0f8ff;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--primary-color);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.cat-fact:hover {
+  transform: translateY(-5px);
+}

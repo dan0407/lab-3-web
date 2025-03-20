@@ -1,0 +1,21 @@
+.error-message {
+  background-color: #fff0f3;
+  color: #e84393;
+  padding: 1.2rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  width: 100%;
+  border-left: 5px solid #e84393;
+  box-shadow: 0 5px 15px rgba(232, 67, 147, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.error-message::before {
+  content: "⚠️";
+  margin-right: 10px;
+  font-size: 1.2rem;
+}

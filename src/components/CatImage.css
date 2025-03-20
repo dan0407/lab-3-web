@@ -1,0 +1,37 @@
+.cat-image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  /* Establecemos dimensiones fijas para el contenedor */
+  height: 300px;
+  max-width: 500px;
+}
+
+.cat-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Esto mantiene la proporción de la imagen */
+  transition: transform 0.5s ease;
+  border-radius: var(--border-radius);
+}
+
+.cat-image:hover {
+  transform: scale(1.03);
+}
+
+.cat-image-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 80%, rgba(0, 0, 0, 0.2));
+  pointer-events: none;
+}

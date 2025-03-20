@@ -1,0 +1,42 @@
+.new-fact-button {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.new-fact-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(45deg, var(--accent-color), #ff9ff3);
+  transition: width 0.5s ease;
+  z-index: -1;
+  border-radius: 50px;
+}
+
+.new-fact-button:hover::before {
+  width: 100%;
+}
+
+.new-fact-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(108, 92, 231, 0.5);
+}
+
+.new-fact-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(108, 92, 231, 0.4);
+}

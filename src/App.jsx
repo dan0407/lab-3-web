@@ -20,17 +20,22 @@ function App() {
     try {
       setLoading(true)
       setError(null)
-      
+
+      // Get cat fact
       const res = await fetch('https://catfact.ninja/fact')
       const data = await res.json()
       const newFact = data.fact
       setFact(newFact)
 
+      // Get first words for the image
       const firstWords = getFirstWords(newFact)
-      const imageResponse = await fetch(`https://cataas.com/cat/says/${firstWords}?size=50&color=red&json=true`)
-      const imageData = await imageResponse.json()
-      setImageUrl(`https://cataas.com${imageData.url}`)
+
+      // Directly construct the image URL without fetching JSON first
+      // This is more reliable as the API might not always return JSON properly
+      const imageUrl = `https://cataas.com/cat/says/${encodeURIComponent(firstWords)}?size=50&color=red`
+      setImageUrl(imageUrl)
     } catch (err) {
+      console.error('Error:', err)
       setError('Error loading cat fact and image. Please try again.')
     } finally {
       setLoading(false)
@@ -44,9 +49,9 @@ function App() {
   return (
     <div className="container">
       <h1>Random Cat Facts</h1>
-      
+
       {error && <ErrorMessage message={error} />}
-      
+
       {loading ? (
         <LoadingSpinner />
       ) : (
